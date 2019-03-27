@@ -27,7 +27,7 @@
 
 								<ul class="nav-dropdown-items">
 									<li class="nav-item">
-										<a href="dd_orderform.html" class="nav-link nav-link-pading">
+										<a href="orderform.html" class="nav-link nav-link-pading">
 											<i class=" icon-shower"></i> 订单列表
 										</a>
 									</li>
@@ -152,15 +152,71 @@
 
 				<div class="content">
 					<div class="index_titleBox index_marketingTitle">
-						团购列表
+						订单列表
+					</div>
+
+					<div class="marketing_selectBox" style="background: #fff;">
+						<span class="select_tenantName">订单号<input type="text" class="select_input"></span>
+						<span class="select_tenantName">商品ID<input type="text" class="select_input"></span>
+						<span class="select_tenantName">会员<input type="text" class="select_input"></span>
+						<a href="" class="select_seach_btn">删除</a>
+						<a href="" class="select_seach_btn">搜索</a>
+						<a href='' class="select_seach_btn">导出</a>
+						<a href='' class="select_seach_btn">批量发货</a>
+						<a href='' class="select_seach_btn">快递连打</a>
+							<span class="select_timeName">选择快递
+						<select class="select_select">
+							<option value ="0" style="text-align: center;">不选择（无法查询与打印快递）</option>
+						</select >
+							
+							
+						</span>
 					</div>
 
 					<div class="marketing_selectBox">
-						<span class="select_tenantName">团购名称<input type="text" class="select_input"></span>
-						<a href="" class="select_seach_btn">搜索</a>
-						<a href='operation/newlyIncreased.html' class="select_seach_btn" data-id="1">新增</a>
-						<a href="" class="select_seach_btn">删除</a>
+						<span class="select_timeName">支付
+						<select class="select_select">
+							<option value ="0" style="text-align: center;">所有</option>
+						</select >	
+						</span>
+							<span class="select_timeName">支付
+						<select class="select_select">
+							<option value ="0" style="text-align: center;">所有</option>
+						</select >	
+						</span>
+								<span class="select_timeName">派送
+							<select class="select_select">
+								<option value ="0" style="text-align: center;">所有</option>
+							</select >	
+							</span>
+								<span class="select_timeName">额外
+							<select class="select_select">
+								<option value ="0" style="text-align: center;">所有</option>
+							</select >	
+							</span>
+								<span class="select_timeName">是否有退款
+							<select class="select_select">
+								<option value ="0" style="text-align: center;">所有</option>
+							</select >	
+							</span>
+								<span class="select_timeName">退款申请
+							<select class="select_select">
+								<option value ="0" style="text-align: center;">所有</option>
+							</select >	
+							</span>
+								<span class="select_timeName">维权申请
+							<select class="select_select">
+								<option value ="0" style="text-align: center;">所有</option>
+							</select >	
+							</span>	
+							<span class="select_timeName">订单状态
+						<select class="select_select">
+							<option value ="0" style="text-align: center;">所有</option>
+						</select >	
+						</span>
+						</span>
 					</div>
+
 
 					<table id="table"></table>
 					<table class="table new_table">
@@ -168,14 +224,16 @@
 							<tr>
 								<th><input id="allboxs" onclick="allcheck()" type="checkbox" /></th>
 								<th>编号</th>
-								<th>名称</th>
-								<th>代理商</th>
-								<th>销售额</th>
-								<th>用户退款</th>
-								<th>余额</th>
-								<th>支持退款审核</th>
-								<th>支持自动发布</th>
-								<th>结算费用率</th>
+								<th>订单号</th>
+								<th>会员名称</th>
+								<th>应付总额</th>
+								<th>已付金额</th>
+								<th>下单时间</th>
+								<th>支付状态</th>
+								<th>配送状态</th>
+								<th>退款申请</th>
+								<th>维权申请</th>
+								<th>订单状态</th>
 								<th>操作</th>
 
 							</tr>
@@ -183,24 +241,18 @@
 						<tbody class="new_tbody">
 							<tr>
 								<td><input name="boxs" type="checkbox" /></td>
-								<td>01</td>
-								<td> 桥亭活鱼小镇 </td>
 								<td></td>
-								<td>￥0</td>
-								<td>￥0</td>
-								<td>￥62</td>
-								<td>否</td>
-
-								<td>否</td>
-								<td>0%</td>
-
-								<td>
-									<a href="operation/compileBtn.html">编辑</a>
-									<a href="">彻底删除</a>
-									<a href="">供应商部门分店列表 </a>
-									<a href=""> 【财务结算】 </a>
-									<a href="">公众号未接入 </a>
-								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+									<td></td>
+								<td></td>
+								<td></td>
+									<td></td>
+								<td></td>
+								<td></td>
 
 							</tr>
 
