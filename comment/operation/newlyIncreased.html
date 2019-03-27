@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carbon - Admin Template</title>
+    <link rel="stylesheet" href="../../vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../../vendor/font-awesome/css/fontawesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../../css/pagination.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/new_index.css"/>
+</head>
+<body class="sidebar-fixed header-fixed" style="overflow:hidden">
+	
+<div class="page-wrapper">
+	<div class="active"></div>
+    <div class="main-container">
+       <div class="sidebar">
+       	<nav class="sidebar-nav">
+       		<ul class="nav">
+       			<li class="nav-item nav-dropdown open">
+       				<a href="#" class="nav-link nav-dropdown-toggle nav-link-title">
+       					<i class="icon icon-shower1"></i> 供应商 <i class="fa fa-caret-left"></i>
+       				</a>
+       
+       				<ul class="nav-dropdown-items">
+       					<li class="nav-item">
+       						<a href="../remarkOn.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 商户列表
+       						</a>
+       					</li>
+       					<li class="nav-item">
+       						<a href="../gys_Store.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 门店列表
+       						</a>
+       					</li>
+       					<li class="nav-item">
+       						<a href="../gys_enter.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 商家入驻申请
+       						</a>
+       					</li>
+       					<li class="nav-item">
+       						<a href="../gys_enterSubmit.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 商家门店提交
+       						</a>
+       					</li>
+       					<li class="nav-item">
+       						<a href="../gys_withdrawDeposit.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 商户提现
+       						</a>
+       					</li>
+       				</ul>
+       			</li>
+       			<li class="nav-item nav-dropdown open">
+       				<a href="#" class="nav-link nav-dropdown-toggle nav-link-title">
+       					<i class="icon icon-shower1"></i> 点评分组管理 <i class="fa fa-caret-left"></i>
+       				</a>
+       
+       				<ul class="nav-dropdown-items">
+       					<li class="nav-item">
+       						<a href="../dp_TagsGrouped.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 点评标签分组
+       						</a>
+       					</li>
+       
+       					<li class="nav-item">
+       						<a href="../dp_scaleOfMarks.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower "></i> 点评评分标准
+       						</a>
+       					</li>
+  
+       
+       				</ul>
+       			</li>
+       			<li class="nav-item nav-dropdown open">
+       				<a href="#" class="nav-link nav-dropdown-toggle nav-link-title">
+       					<i class="icon icon-shower1"></i> 点评管理 <i class="fa fa-caret-left"></i>
+       				</a>
+       
+       				<ul class="nav-dropdown-items">
+       					<li class="nav-item">
+       						<a href="../dp_list.html" class="nav-link nav-link-pading">
+       							<i class=" icon-shower"></i> 点评列表
+       						</a>
+       					</li>
+       
+       				
+       
+       
+       				</ul>
+       			</li>
+       
+       		</ul>
+       	</nav>
+       </div>
+       
+        <div class="content">
+		
+		
+				<h1>这是新增页面</h1>
+		
+			
+			</div>
+			<div id="test">
+			<!--假数据-->
+			<!--<div class="inner">
+				<img src="img/1.png"/>
+				<h3>名称：小米手机</h3>
+				<span>价格：1000</span>
+			</div>-->
+		</div>
+    </div>
+
+</div>
+
+
+<div class="footer_text">
+	大鹏所城商业系统 dapeng.com  管理平台 系统版本:5.0.6678
+</div>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/popper.js/popper.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/jquery.pagination.js"></script>
+<script src="../../vendor/chart.js/chart.min.js"></script>
+<script src="../../js/carbon.js"></script>
+<script src="../../js/demo.js"></script>
+<script src="../../js/echarts.js"></script>
+<script>
+		$(function() {
+		console.log(window.location.href)
+		$.ajax({
+			type: "GET",
+			url: "goods.json",
+			dataType: "json",
+			success: function(res) {
+				console.log(res)
+				console.log(res);
+				console.log(typeof(res));
+				var data = res.result;
+				console.log(data);
+				var str = '';
+				// 注意：输出的i与obj分别为下标与单个的对象
+				$.each(data, function(i, obj) {
+					// console.log(i);
+					// console.log(obj);
+					str += '<div class="inner">';
+					str += '<img src="' + obj.imgUrl + '"/>';
+					str += '<h3>' + '名称：' + obj.name + '</h3>';
+					str += '<span>' + '价格：￥' + obj.price + '</span>';
+					str += '</div>';
+				});
+				$("#test").append(str);
+			}
+		});
+	});	
+	$(document).ready(function(){
+
+		$('.M-box1').pagination({
+			// 总页数
+			totalData: 50,
+			showData: 5,
+			coping: true,
+			keepShowPN:true,
+			prevContent:"<上一页",
+			pageCount:5,
+			nextContent: '下一页>',
+			
+		});
+	});
+</script>
+
+</body>
+</html>
